@@ -124,4 +124,14 @@ libs
 
 # test file
 src/test
+
+/.idea/discord.xml
+/.idea/gradle.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,gradle
+/.idea/
+/.gradle/
+
+
