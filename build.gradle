@@ -1,39 +1,38 @@
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "7.0.0"
+    id 'maven-publish'
 }
 
-group 'spigot.gradle.project'
-
-shadowJar{
-    archiveFileName = "${project.name}.jar"
-}
+group 'jeeper.utils'
 
 repositories {
     mavenCentral()
     maven { url "https://papermc.io/repo/repository/maven-public/" }
-    maven {
-        name = "sonatype-oss-snapshots"
-        url = "https://oss.sonatype.org/content/repositories/snapshots/"
-    }
-    maven { url "https://maven.enginehub.org/repo/" }
-    maven { url "https://repo.dmulloy2.net/repository/public/" }
-    maven { url "https://repo.citizensnpcs.co/" }
 }
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation "net.kyori:adventure-text-minimessage:4.2.0-SNAPSHOT"
-    compileOnly 'net.luckperms:api:5.3'
-    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.5'
-    compileOnly 'com.comphenix.protocol:ProtocolLib:4.7.0'
-    implementation 'org.reflections:reflections:0.10.2'
-    compileOnly 'net.citizensnpcs:citizens-main:2.0.28-SNAPSHOT'
     compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
-    //compileOnly files('libs/Paper-Server-1.17.1-R01-reobf.jar')
 }
 
-test {
-    useJUnitPlatform()
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier.set('sources')
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    archiveClassifier.set('javadoc')
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
+
+wrapper {
+    gradleVersion = "6.1.1"
+    distributionType = Wrapper.DistributionType.ALL
 }
