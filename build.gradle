@@ -18,12 +18,12 @@ dependencies {
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
-    archiveClassifier.set('sources')
+    classifier 'sources'
     from sourceSets.main.allSource
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    archiveClassifier.set('javadoc')
+    classifier 'javadoc'
     from javadoc.destinationDir
 }
 
@@ -33,6 +33,6 @@ artifacts {
 }
 
 wrapper {
-    gradleVersion = "7.1"
+    gradleVersion = "4.8.1"
     distributionType = Wrapper.DistributionType.ALL
 }
