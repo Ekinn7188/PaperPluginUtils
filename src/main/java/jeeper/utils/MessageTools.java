@@ -69,7 +69,7 @@ public class MessageTools {
                 .replaceAll("&o", "<italic>")
                 .replaceAll("&r", "<reset>");
 
-        return MiniMessage.miniMessage().deserialize(message, TemplateResolver.resolving((Object[]) placeholders));
+        return MiniMessage.miniMessage().deserialize(message, TemplateResolver.templates(placeholders));
     }
 
     /**
