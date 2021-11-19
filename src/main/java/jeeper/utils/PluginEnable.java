@@ -17,7 +17,7 @@ public class PluginEnable {
      * @param pluginNames a list of plugin dependencies to search for
      * @param thisPlugin the name of the current plugin, listed in your plugin.yml
      */
-    public void checkForPluginDependencies(List<String> pluginNames, String thisPlugin) {
+    public static void checkForPluginDependencies(List<String> pluginNames, String thisPlugin) {
         for (String plugins : pluginNames){
             if (Bukkit.getServer().getPluginManager().getPlugin(plugins) == null || !Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin(plugins)).isEnabled()) {
                 Bukkit.getLogger().log(Level.SEVERE, plugins + " not found or not enabled");
@@ -33,7 +33,7 @@ public class PluginEnable {
      *
      * @return the server version (e.g. "v1_17_R1"). If there's trouble finding the version, an empty string will be returned.
      */
-    public String getServerVersion() {
+    public static String getServerVersion() {
         try {
             return Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3];
         } catch (ArrayIndexOutOfBoundsException e) {
