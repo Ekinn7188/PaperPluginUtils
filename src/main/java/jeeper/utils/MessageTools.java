@@ -92,6 +92,7 @@ public class MessageTools {
                             .content("Config \"" + path + "\" does not exist. Check logs for details")
                             .color(NamedTextColor.RED).build());
                 }
+                ops.remove(ops.iterator().next());
             }
             e.printStackTrace();
             return "";
