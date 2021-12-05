@@ -65,7 +65,7 @@ public class MessageTools {
                 .replaceAll("&k", "<obfuscated>")
                 .replaceAll("&l", "<bold>")
                 .replaceAll("&m", "<strikethrough>")
-                .replaceAll("&n", "<underline>")
+                .replaceAll("&n", "<underlined>")
                 .replaceAll("&o", "<italic>")
                 .replaceAll("&r", "<reset>");
 
