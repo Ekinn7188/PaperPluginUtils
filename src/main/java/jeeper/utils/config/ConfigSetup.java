@@ -3,9 +3,13 @@ package jeeper.utils.config;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
 import java.util.Objects;
 
 public class ConfigSetup {
@@ -55,5 +59,16 @@ public class ConfigSetup {
         config = YamlConfiguration.loadConfiguration(file);
     }
 
+    /**
+     * Read the config file and set its values to the defaults
+     * @param plugin the plugin
+     * @param configName the name of the yaml file to read from
+     */
+    public void readDefaults(JavaPlugin plugin, String configName){
+        InputStream inputStream = plugin.getResource(configName);
+        Yaml yaml = new Yaml();
+        Map<String, Object> map = yaml.load(inputStream);
+        config.addDefaults(map);
+    }
 
 }

@@ -24,10 +24,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    //minecraft
     implementation "net.kyori:adventure-text-minimessage:4.2.0-SNAPSHOT"
     compileOnly 'io.papermc.paper:paper-api:1.17.1-R0.1-SNAPSHOT'
+
+    //yaml
+    implementation 'org.yaml:snakeyaml:1.29'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
