@@ -12,6 +12,9 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * A class to handle configuration files.
+ */
 public class Config {
 
     private final File file;
@@ -37,6 +40,9 @@ public class Config {
         config = YamlConfiguration.loadConfiguration(file);
     }
 
+    /**
+     * @return The FileConfiguration of the config file
+     */
     public FileConfiguration get(){
         return config;
     }

@@ -6,6 +6,8 @@ plugins {
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+    withJavadocJar()
+    withSourcesJar()
 }
 
 publishing {
@@ -30,4 +32,10 @@ dependencies {
 
     //yaml
     implementation("org.yaml:snakeyaml:1.30")
+}
+
+tasks.javadoc {
+    if (JavaVersion.current().isJava9Compatible) {
+        (options as StandardJavadocDocletOptions).addBooleanOption("html5", true)
+    }
 }

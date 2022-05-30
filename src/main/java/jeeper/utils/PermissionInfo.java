@@ -7,13 +7,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * This class takes apart a permission string and grabs the largest number at the end, if any exists
+ */
 public class PermissionInfo {
     /**
      * @param player The org.bukkit.entity.Player
-     * @param permissionPrefix The prefix before the number. For example, "dirtlands.sethome."
+     * @param permissionPrefix The prefix before the number. For example, "plugin.sethome."
      * @return Returns an integer for the largest number found. If no number was found, -1 is returned
      */
-    public static int get(Player player, String permissionPrefix){
+    public static int getPermissionNumber(Player player, String permissionPrefix){
         List<Integer> allNumbers = new ArrayList<>();
         int largestNumber;
         player.recalculatePermissions();

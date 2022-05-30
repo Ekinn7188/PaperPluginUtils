@@ -3,6 +3,9 @@ package jeeper.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
+/**
+ * A class made to help parse to Strings and back.
+ */
 public class LocationParser {
 
     /**

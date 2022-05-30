@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.logging.Level;
 
+/**
+ * Useful tools that can be run when a plugin is enabled.
+ */
 public class PluginEnable {
 
     /**

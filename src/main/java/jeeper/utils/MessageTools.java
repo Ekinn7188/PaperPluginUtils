@@ -16,8 +16,14 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * A class that contains methods to compile text into a {@link Component}
+ */
 public class MessageTools {
 
+    /**
+     * A line of regex that detects a URL in a string
+     */
     public static Pattern urlPattern = Pattern.compile("^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]", Pattern.CASE_INSENSITIVE);
 
     /**
