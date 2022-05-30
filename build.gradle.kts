@@ -11,7 +11,7 @@ java {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "jeper.utils"
+            groupId = "jeeper.utils"
             artifactId = "PaperPluginUtils"
             version = "1.1"
 
