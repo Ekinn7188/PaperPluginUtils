@@ -13,7 +13,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "jeeper.utils"
             artifactId = "PaperPluginUtils"
-            version = "1.1"
+            version = "1.2"
 
             from(components["java"])
         }
