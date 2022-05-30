@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Objects;
 
-public class ConfigSetup {
+public class Config {
 
     private final File file;
     private FileConfiguration config;
@@ -22,7 +22,7 @@ public class ConfigSetup {
      * @param configName the name of your config file
      * @param pluginName the name of the plugin (located in plugin.yml)
      */
-    public ConfigSetup(String configName, String pluginName){
+    public Config(String configName, String pluginName){
         file = new File(Objects.requireNonNull(Bukkit.getServer().getPluginManager().getPlugin(pluginName)).getDataFolder(), configName + ".yml");
 
         if (!file.exists()){
