@@ -15,7 +15,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "jeeper.utils"
             artifactId = "PaperPluginUtils"
-            version = "1.2"
+            version = "1.3"
 
             from(components["java"])
         }
@@ -28,10 +28,7 @@ repositories {
 
 dependencies {
     //minecraft
-    paperDevBundle("1.18.2-R0.1-SNAPSHOT")
-
-    //yaml
-    implementation("org.yaml:snakeyaml:1.30")
+    paperDevBundle("1.19-R0.1-SNAPSHOT")
 }
 
 tasks.javadoc {
